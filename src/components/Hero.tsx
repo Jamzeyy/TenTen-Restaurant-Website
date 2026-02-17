@@ -160,8 +160,16 @@ export default function Hero() {
             Order Online
           </a>
           <a
+            href="https://www.google.com/maps/reserve/v/dine/c/m9_x0F7SRec?source=pa&opi=89978449&hl=en-US"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative px-10 py-4 text-sm font-bold tracking-[0.2em] uppercase border-2 border-brand-500 text-brand-400 rounded-full hover:bg-brand-500 hover:text-navy-900 transition-all duration-500"
+          >
+            Reserve a Table
+          </a>
+          <a
             href="#menu"
-            className="px-10 py-4 text-sm font-semibold tracking-[0.2em] uppercase border-2 border-brand-500/50 text-brand-400 rounded-full hover:bg-brand-500/10 hover:border-brand-500/80 transition-all duration-500"
+            className="px-10 py-4 text-sm font-semibold tracking-[0.2em] uppercase border-2 border-white/20 text-neutral-300 rounded-full hover:bg-white/5 hover:border-white/40 transition-all duration-500"
           >
             View Our Menu
           </a>

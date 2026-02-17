@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, CalendarDays } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "#hero" },
@@ -71,6 +71,15 @@ export default function Navbar() {
             <span>954-999-5298</span>
           </a>
           <a
+            href="https://www.google.com/maps/reserve/v/dine/c/m9_x0F7SRec?source=pa&opi=89978449&hl=en-US"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-5 py-2.5 text-sm font-semibold tracking-wider uppercase border-2 border-brand-500 text-brand-400 rounded-full hover:bg-brand-500 hover:text-navy-900 transition-all duration-300"
+          >
+            <CalendarDays className="w-4 h-4" aria-hidden="true" />
+            Reserve
+          </a>
+          <a
             href="https://tentenseafoodgrill.kwickmenu.com/index.php"
             target="_blank"
             rel="noopener noreferrer"
@@ -127,6 +136,16 @@ export default function Navbar() {
             >
               <Phone className="w-4 h-4" aria-hidden="true" />
               <span>954-999-5298</span>
+            </a>
+            <a
+              href="https://www.google.com/maps/reserve/v/dine/c/m9_x0F7SRec?source=pa&opi=89978449&hl=en-US"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 px-6 py-3 font-semibold tracking-wider uppercase border-2 border-brand-500 text-brand-400 rounded-full"
+              tabIndex={isMobileOpen ? 0 : -1}
+            >
+              <CalendarDays className="w-4 h-4" aria-hidden="true" />
+              Reserve a Table
             </a>
             <a
               href="https://tentenseafoodgrill.kwickmenu.com/index.php"

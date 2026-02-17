@@ -7,6 +7,7 @@ import {
   MapPin,
   Clock,
   ExternalLink,
+  CalendarDays,
 } from "lucide-react";
 
 export default function Contact() {
@@ -243,23 +244,41 @@ export default function Contact() {
               </form>
             </div>
 
-            {/* Quick order CTA */}
-            <a
-              href="https://tentenseafoodgrill.kwickmenu.com/index.php"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 flex items-center justify-between p-6 bg-brand-700/10 border border-brand-600/20 rounded-2xl hover:border-brand-500/40 transition-all duration-500 group"
-            >
-              <div>
-                <p className="font-semibold text-brand-400">
-                  Skip the wait — order online
-                </p>
-                <p className="text-sm text-neutral-400 mt-1">
-                  Browse our full menu and order for pickup
-                </p>
-              </div>
-              <ExternalLink className="w-5 h-5 text-brand-500 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" aria-hidden="true" />
-            </a>
+            {/* Quick action CTAs */}
+            <div className="mt-6 grid sm:grid-cols-2 gap-4">
+              <a
+                href="https://www.google.com/maps/reserve/v/dine/c/m9_x0F7SRec?source=pa&opi=89978449&hl=en-US"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-6 bg-brand-500/10 border border-brand-500/30 rounded-2xl hover:border-brand-500/60 hover:bg-brand-500/15 transition-all duration-500 group"
+              >
+                <div>
+                  <p className="font-semibold text-brand-400">
+                    Reserve a Table
+                  </p>
+                  <p className="text-sm text-neutral-400 mt-1">
+                    Book your spot online
+                  </p>
+                </div>
+                <CalendarDays className="w-5 h-5 text-brand-500 group-hover:scale-110 transition-transform" aria-hidden="true" />
+              </a>
+              <a
+                href="https://tentenseafoodgrill.kwickmenu.com/index.php"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-6 bg-brand-700/10 border border-brand-600/20 rounded-2xl hover:border-brand-500/40 transition-all duration-500 group"
+              >
+                <div>
+                  <p className="font-semibold text-brand-400">
+                    Order Online
+                  </p>
+                  <p className="text-sm text-neutral-400 mt-1">
+                    Browse our menu for pickup
+                  </p>
+                </div>
+                <ExternalLink className="w-5 h-5 text-brand-500 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" aria-hidden="true" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
