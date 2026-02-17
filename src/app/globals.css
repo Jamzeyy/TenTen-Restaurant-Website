@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette from Ten Ten logo - primary yellow #FFCF03 */
+  --color-brand-50: #fffde6;
+  --color-brand-100: #fff9cc;
+  --color-brand-200: #fff399;
+  --color-brand-300: #ffec66;
+  --color-brand-400: #ffe633;
+  --color-brand-500: #ffcf03;
+  --color-brand-600: #e6ba03;
+  --color-brand-700: #bf9b02;
+  --color-brand-800: #997c02;
+  --color-brand-900: #665301;
+
+  /* Navy accent from logo #24304F */
+  --color-navy-50: #e8ebf0;
+  --color-navy-100: #c5cbd8;
+  --color-navy-200: #9eaabf;
+  --color-navy-300: #7789a6;
+  --color-navy-400: #4d6180;
+  --color-navy-500: #24304f;
+  --color-navy-600: #1e2844;
+  --color-navy-700: #182038;
+  --color-navy-800: #12182d;
+  --color-navy-900: #0c1021;
+
+  --color-jade-50: #f0fdf4;
+  --color-jade-500: #22c55e;
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-chinese: "Noto Serif SC", "Songti SC", serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* WCAG 2.2: Focus Not Obscured — offset content for sticky nav */
+  *:target {
+    scroll-margin-top: 100px;
+  }
+
+  body {
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-200);
+    color: var(--color-brand-900);
+  }
+
+  /* WCAG 2.2 2.4.13 Focus Appearance — visible focus ring on all interactive elements */
+  :focus-visible {
+    outline: 3px solid var(--color-brand-500);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Remove default outline only when focus-visible doesn't apply (mouse clicks) */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* WCAG 2.2 2.5.8: Minimum target size of 24x24 for interactive elements */
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  [role="button"] {
+    min-height: 24px;
+    min-width: 24px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Skip to content link (screen reader + keyboard only) */
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 16px;
+    z-index: 9999;
+    padding: 12px 24px;
+    background: var(--color-brand-500);
+    color: #000;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    border-radius: 0 0 8px 8px;
+    transition: top 0.2s ease;
+  }
+
+  .skip-link:focus {
+    top: 0;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes fade-up {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.6s ease-out forwards;
+}
+
+/* WCAG 2.2: Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-float,
+  .animate-shimmer,
+  .animate-fade-up,
+  .animate-scale-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-700);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-500);
+}
